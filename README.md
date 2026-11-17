@@ -32,11 +32,13 @@ The algorithm follows these steps:
 7. Releases dynamically allocated memory.
 5. Example Output
 For a graph with 5 vertices, starting BFS from vertex 0:
+
                - vertex 0: dist=0, parent=-1
                - vertex 1: dist=1, parent=0
                - vertex 2: dist=1, parent=0
                - vertex 3: dist=2, parent=1
                - vertex 4: dist=3, parent=3
+   
 # Important Notes
 - BFS uses a Queue following the FIFO principle.
 - visited prevents processing the same vertex multiple times.

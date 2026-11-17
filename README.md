@@ -14,7 +14,7 @@ The following C++ libraries are used in this implementation:
 # Graph Class
 The graph is implemented using a class named Graph.
 Private Members:
-- int N	Stores the number of vertices in the graph.
-- list<int>* adj	An array of adjacency lists used to store neighboring vertices.
-- vector<int> parent	Stores the parent of each vertex during traversal.
-- vector<int> Distance	Stores the shortest distance from the source vertex to each vertex.
+- int N —	Stores the number of vertices in the graph.
+- list<int>* adj —	An array of adjacency lists used to store neighboring vertices.
+- vector<int> parent — Stores the parent of each vertex during traversal.
+- vector<int> Distance —	Stores the shortest distance from the source vertex to each vertex.

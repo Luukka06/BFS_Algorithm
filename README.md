@@ -1,20 +1,54 @@
-# BFS_Algorithm
-Breadth-First Search(BFS) is a graph traversal algorithm used to visit vertices and find the shortest path between vertices in an unweighted graph.
-It explores a graph level by level. It starts from a given source vertex, visits all its neighboring vertices first, then visits the neighbors of those vertices, and 
-continues until all reachable vertices have been visited. The algorithm uses a Queue (FIFO — First In, First Out) data structure. This means that the first element 
-added to the queue is the first one to be removed.
+BFS Algorithm (Breadth-First Search)
+1. Overview
+Breadth-First Search (BFS) is a graph traversal algorithm that explores vertices level by level, starting from a given source vertex.
 
-# Libraries
-The following C++ libraries are used in this implementation:
-- iostream — used for input and output operations.
-- list — used to store adjacency lists.
-- vector — used to store parent vertices and distances.
-- queue — used to implement the queue required by BFS.
+It uses a Queue (FIFO) data structure to ensure that vertices closer to the source are visited first.
 
-# Graph Class
-The graph is implemented using a class named Graph.
-Private Members:
-- int N —	Stores the number of vertices in the graph.
-- list<int>* adj —	An array of adjacency lists used to store neighboring vertices.
-- vector<int> parent — Stores the parent of each vertex during traversal.
-- vector<int> Distance —	Stores the shortest distance from the source vertex to each vertex.
+BFS can find the shortest path in an unweighted graph.
+2. Data Structures
+The implementation uses the following variables:
+- N — number of vertices.
+- adj — adjacency lists used to store graph connections.
+- visited — keeps track of visited vertices.
+- parent — stores the parent of each vertex.
+- Distance — stores the shortest distance from the source vertex.
+3. Helper Functions
+- Graph(int N) — initializes the graph and its data structures.
+- AddEdge(int u, int w) — adds a directed edge from vertex u to vertex w.
+- printGraph() — displays the graph using adjacency lists.
+- BFS(int s) — performs Breadth-First Search starting from vertex s.
+4. How BFS Works
+The algorithm follows these steps:
+1. Checks whether the graph and source vertex are valid.
+2. Initializes visited, parent, and Distance.
+3. Marks the source vertex as visited and sets its distance to 0.
+4. Inserts the source vertex into the queue.
+5. While the queue is not empty:
+   - Removes the first vertex from the queue.
+   - Checks all its neighboring vertices.
+   - If a neighbor has not been visited:
+     - Marks it as visited.
+     - Sets its parent to the current vertex.
+     - Calculates its distance (Distance[current] + 1).
+     - Adds it to the queue.
+6. Prints the distance and parent of every vertex.
+7. Releases dynamically allocated memory.
+5. Example Output
+For a graph with 5 vertices, starting BFS from vertex 0:
+               - vertex 0: dist=0, parent=-1
+               - vertex 1: dist=1, parent=0
+               - vertex 2: dist=1, parent=0
+               - vertex 3: dist=2, parent=1
+               - vertex 4: dist=3, parent=3
+6. Important Notes
+- BFS uses a Queue following the FIFO principle.
+- visited prevents processing the same vertex multiple times.
+- Distance stores the shortest distance from the source.
+- parent can be used to reconstruct the shortest path.
+- Unreachable vertices keep their distance and parent equal to -1.
+- For undirected graphs, edges must be added in both directions.
+- BFS finds shortest paths in unweighted graphs, not necessarily weighted ones.
+7. Complexity Analysis
+- Time Complexity: \(O(V+E)\)
+- Space Complexity: \(O(V+E)\)
+Where V is the number of vertices and E is the number of edges.
